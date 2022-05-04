@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,6 +22,10 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
 
 Route::get('/call', 'App\Http\Controllers\CallController@index')->name('call');
+
+Route::get('/thanks', 'App\Http\Controllers\PayPayController@thanks');
+
+Route::get('/paypay', 'App\Http\Controllers\PayPayController@index');
